@@ -13,8 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -26,9 +24,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.makbyparody.R
+import com.example.makbyparody.presentation.navigation.Screens
 import com.example.makbyparody.presentation.theme.Typography
 import com.example.makbyparody.presentation.theme.gray99
 import com.example.makbyparody.presentation.theme.makGreen
@@ -65,8 +63,12 @@ fun MoreScreen(navController: NavHostController, viewModel: MoreViewModel) {
                     .background(white)
 
             ) {
-                MoreListButton(stringResource(R.string.contact_us), {/*TODO*/})
-                MoreListButton(stringResource(R.string.about_the_app), {/*TODO*/})
+                MoreListButton(stringResource(R.string.contact_us)) {/*TODO*/ }
+                MoreListButton(stringResource(R.string.about_the_app)) {
+                    navController.navigate(
+                        Screens.ABOUT_APP
+                    )
+                }
             }
         }
 
